@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "com.example.grpc";
+
+message Product {
+ string id = 1;
+ string description = 2;
+}
+
+message ProductId {
+ string id = 1;
+}
+
+service ProductService {
+ rpc CreateProduct(Product) returns (Product) {}
+ rpc GetProduct(ProductId) returns (Product) {}
+ rpc UpdateProduct(Product) returns (Product) {}
+ rpc DeleteProduct(ProductId) returns (Product) {}
+}
